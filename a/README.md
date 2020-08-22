@@ -1,7 +1,7 @@
 
 ## How To Run Containers
 
-## Steps to run nodejs container
+### Steps to run nodejs container
 
 1. Ensure you are in the directory `/a/application`
 2. Run `build -t application . ` to build image
@@ -9,7 +9,7 @@
 
 Visit `http://localhost:3000` to ensure the nodejs application is working (it will serve a simple html file). 
 
-## Steps to run nginx-proxy container
+### Steps to run nginx-proxy container
 
 1. Ensure you are in the directory `/a/nginx`
 2. Run `build -t nginx-proxy .` to build image
