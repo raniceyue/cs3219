@@ -1,16 +1,19 @@
 
-## How To
+## How To Run Containers
 
-Ensure that you are in the directory assignment_a containing the dockerfile
+## Steps to run nodejs container
 
-To build the docker image, run
+1. Ensure you are in the directory `/a/application`
+2. Run `build -t application . ` to build image
+3. Run `docker run -d -p 3000:3000 --name node-app application` to build container
 
-`docker build -t ranice . `
+Visit `http://localhost:3000` to ensure the nodejs application is working (it will serve a simple html file). 
 
-To create a container running the image, run
+## Steps to run nginx-proxy container
 
-`docker run -it --rm -d -p 8080:80 --name ranice_container ranice`
+1. Ensure you are in the directory `/a/nginx`
+2. Run `build -t nginx-proxy .` to build image
+3. Run `docker run -d -p 80:80 --link node-app:server --name nginx-proxy nginx-proxy` to build container and link nginx-proxy container to the nodejs container
 
-This builds the container and forwards the contianer's port 80 to your local port 8080 assuming it's not currently being used
+Visit `http://localhost` to see that the reverse proxy passes requests to `/` to the node application on port `3000`.  
 
-Access the server through entering `http://localhost` on your address bar, it should direct you to the server through the reverse proxy
