@@ -13,7 +13,17 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(cors());
 
-mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://cs3219-assignment-b:cs3219b@cluster0.orruv.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+mongoose.connect(uri, { useNewUrlParser: true});
+
 var db = mongoose.connection;
 
 if (!db) {

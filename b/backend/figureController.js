@@ -26,11 +26,7 @@ exports.index = function (request, response) {
 							message: err,
 					});
 			}
-			response.json({
-					status: "success",
-					message: "U got all ur figures mang",
-					data: figures
-			});
+			response.send(figures);
 	});
 };
 
