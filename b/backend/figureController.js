@@ -55,7 +55,8 @@ Figure.findById(request.params.figure_id, function (err, figure) {
         figure.brand = request.body.brand;
         figure.price = request.body.price;
         figure.toSell = request.body.toSell;
-// save the figure and check for errors
+
+		// save the figure and check for errors
         figure.save(function (err) {
             if (err)
                 response.json(err);
@@ -66,6 +67,7 @@ Figure.findById(request.params.figure_id, function (err, figure) {
         });
     });
 };
+
 // Handle delete figure
 exports.delete = function (request, response) {
     Figure.remove({
