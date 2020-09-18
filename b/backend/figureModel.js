@@ -8,14 +8,17 @@ var figureSchema = mongoose.Schema({
 			type: String,
 			required: true
 		},
+
 		brand: {
 			type: String,
 			required: true
 		},
+
 		price: {
 			type: Number,
 			required: true
 		},
+		
 		toSell: {
 			type: Boolean,
 			required: true

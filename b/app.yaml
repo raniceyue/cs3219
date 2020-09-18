@@ -1,0 +1,18 @@
+runtime: nodejs10
+
+env: standard
+
+manual_scaling:
+  instances: 1
+
+resources:
+  cpu: .5
+  memory_gb: .5
+  disk_size_gb: 10
+
+handlers:
+  - url: /
+    static_dir: frontend/public
+  - url: / 
+    static_files: frontend/public/index.html
+    upload: client/build/index.html

@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+import AppHeader from "./components/AppHeader.js";
+import Figure from "./components/Figure.js";
+import AddFigure from "./components/AddFigure.js"
 
 class App extends Component {
+
   
   constructor(props) {
     super(props);
@@ -8,7 +12,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3333/api/figures')
+    fetch('/api/figures')
     .then(res => res.json())
     .then((data) => {
       this.setState({ figures: data })
@@ -17,35 +21,28 @@ class App extends Component {
     .catch(console.log)
   }
   
+  /**
+   * Render all figures on the homepage
+   */
+
   render() {
     return(
       <div className="container">
-        <div className="col-xs-12">
-        <h1>CS3219 Assignment B</h1>
-        {this.state.figures.map((figure) => (
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">{figure.name}</h5>
-              <h6 className="card-subtitle mb-2 text-muted">
-              { !figure.toSell &&
-                <span>
-                In Posession
-                </span>
-              }
-              { figure.toSell &&
-                <span>
-                  Listed for Sale
-                </span>
-              }              
-              </h6>
-            </div>
+        <div class="row">
+          <div className="col-md-8">
+          <AppHeader />
+          {this.state.figures.map((figure) => (
+            <Figure name={figure.name} toSell={figure.toSell} />
+          ))}
           </div>
-        ))}
+
+          <div className="col-md-4">
+            <AddFigure/>
+          </div>
         </div>
      </div>
     );
   }
-
 }
 
 export default App;
