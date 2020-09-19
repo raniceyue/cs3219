@@ -2,8 +2,8 @@
 var mongoose = require('mongoose');
 
 // Setup schema
-
 var figureSchema = mongoose.Schema({
+	
 		name: {
 			type: String,
 			required: true

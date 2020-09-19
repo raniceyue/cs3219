@@ -22,7 +22,7 @@ client.connect(err => {
   client.close();
 });
 
-mongoose.connect(uri, { useNewUrlParser: true});
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 var db = mongoose.connection;
 

@@ -9,7 +9,7 @@ const AppHeader = () => (
   <AppBar position="static">
     <Toolbar>
       <Typography variant="h6" color="inherit">
-        CS3219 Assignment B
+        Your Figure Collection
       </Typography>
     </Toolbar>
   </AppBar>

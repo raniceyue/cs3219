@@ -1,7 +1,7 @@
 Figure = require('./figureModel');
 
 exports.new = function (request, response) {
-	var figure = new Figure();
+    var figure = new Figure();
 	figure.name = request.body.name ? request.body.name : figure.name;
 	figure.brand = request.body.brand;
 	figure.price = request.body.price;
@@ -47,6 +47,7 @@ Figure.findById(request.params.figure_id, function (err, figure) {
         if (err)
             response.send(err);
 
+        figure._id = request.body._id;
 		figure.name = request.body.name ? request.body.name : figure.name;
         figure.brand = request.body.brand;
         figure.price = request.body.price;
@@ -64,7 +65,7 @@ Figure.findById(request.params.figure_id, function (err, figure) {
     });
 };
 
-// Handle delete figure
+// Handle delete figure, needs ID for deletion
 exports.delete = function (request, response) {
     Figure.remove({
         _id: request.params.figure_id
