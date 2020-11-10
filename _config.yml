@@ -1,0 +1,54 @@
+# Setup
+title: CS3219 Blog
+description: Ranice Tan Yue Xuan <br> A0187145Y <br> A blog for all my CS3219 assignments!
+url: https://raniceyue.github.io
+paginate: 5
+permalink: pretty
+
+# Gems
+plugins:
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Optimize Jekyll
+exclude:
+  - .editorconfig
+  - .git
+  - .jekyll-cache
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - scripts/
+  - not-pure-poole.gemspec
+
+# Optimize Jekyl SEO Tag
+twitter:
+  username: raniceyue
+  card: summary
+social:
+  name: Ranice Tan
+  links:
+    - https://github.com/raniceyue
+lang: en
+
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# Options
+
+# Replace this value and uncomment to enable Google Analytics tracking
+# google_analytics: UA-000000-0
+
+# Replace this value and uncomment to enable Disqus
+# disqus: xxxxxx
+
+# Specify the author for blog posts
+author:
+  name: Ranice Tan
+  url: https://github.com/raniceyue/
+  email: ranice@u.nus.edu

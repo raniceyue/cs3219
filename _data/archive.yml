@@ -1,0 +1,6 @@
+- type: posts
+  title: All Posts
+  url: /
+- type: tags
+  title: Tasks
+  url: /tags/

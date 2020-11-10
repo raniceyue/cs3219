@@ -1,0 +1,6 @@
+- title: Email
+  url: mailto://ranice@u.nus.edu
+  icon: fas fa-envelope
+- title: GitHub
+  url: https://github.com/raniceyue/cs3219
+  icon: fab fa-github
